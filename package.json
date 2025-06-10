@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "scrape": "node scraper.js",
-     "build": "npm install --legacy-peer-deps && npm run scrape"
-    //"dev": "node --watch server.js"
+    "build": "npm install --legacy-peer-deps && npm run scrape"
   },
   "dependencies": {
     "@langchain/community": "^0.2.5",
