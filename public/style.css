@@ -1,0 +1,113 @@
+/* General Setup */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Main Chat Window */
+#chat-container {
+    width: 90%;
+    max-width: 600px;
+    height: 90vh;
+    max-height: 800px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background: #003366;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+.chat-header h2 { margin: 0; font-size: 1.2em; }
+.chat-header p { margin: 5px 0 0; font-size: 0.9em; opacity: 0.9; }
+
+/* Message Area */
+#chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message { display: flex; flex-direction: column; max-width: 85%; line-height: 1.5; }
+.message-content { padding: 10px 15px; border-radius: 18px; word-wrap: break-word; }
+.user-message { align-self: flex-end; }
+.user-message .message-content { background-color: #007bff; color: white; border-bottom-right-radius: 4px; }
+.bot-message { align-self: flex-start; }
+.bot-message .message-content { background-color: #e9ecef; color: #333; border-bottom-left-radius: 4px; }
+.bot-message.error .message-content { background-color: #f8d7da; color: #721c24; }
+
+/* NEW: Style for the "Thinking..." message */
+.thinking-message .message-content {
+    color: #6c757d;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.thinking-message .timer {
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #0056b3;
+}
+
+/* Input Form */
+#form { display: flex; padding: 15px; border-top: 1px solid #eee; gap: 10px; background: #fff; }
+#chat-input { flex-grow: 1; padding: 12px; border: 1px solid #ccc; border-radius: 20px; font-size: 1em; }
+#chat-input:disabled { background-color: #f8f9fa; }
+#form button:disabled { background-color: #a9a9a9; cursor: not-allowed; }
+#form button { padding: 12px 20px; background-color: #003366; color: white; border: none; border-radius: 20px; cursor: pointer; font-size: 1em; transition: background-color 0.2s; }
+#form button:hover { background-color: #0055a4; }
+
+/* Sources and Feedback */
+.sources { margin-top: 12px; padding-top: 8px; border-top: 1px solid #d1d9e0; font-size: 0.85em; }
+.sources strong { display: block; margin-bottom: 5px; color: #495057; }
+.sources a { display: inline-block; margin: 0 8px 5px 0; color: #0056b3; text-decoration: none; background: #e0e9f2; padding: 3px 8px; border-radius: 10px; }
+.sources a:hover { text-decoration: underline; background: #cdd8e4; }
+.feedback { display: flex; align-items: center; gap: 5px; margin-top: 10px; }
+.feedback button { background: none; border: 1px solid #ccc; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; }
+.feedback button:hover { background-color: #f0f0f0; }
+.feedback em { font-size: 0.9em; color: #007bff; padding: 5px; }
+
+/* Suggestion Buttons */
+#suggestions-container {
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+}
+.suggestion-btn {
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    background: #e7f3ff;
+    color: #0056b3;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: left;
+    transition: all 0.2s ease-in-out;
+}
+.suggestion-btn:hover {
+    background: #007bff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
